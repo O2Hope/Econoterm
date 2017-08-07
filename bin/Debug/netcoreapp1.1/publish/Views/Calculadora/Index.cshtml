@@ -1,0 +1,91 @@
+﻿@model Econoterm.Models.Calculo   
+@using Microsoft.AspNetCore.Identity
+@using Econoterm.Models.Identity
+@inject SignInManager<ApplicationUser> SignInManager     
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econoterm</title>
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="~/assets/css/MUSA_form-wizard.css">
+    <link rel="stylesheet" href="~/assets/css/MUSA_form-wizard1.css">
+    <link rel="stylesheet" href="~/assets/css/Navigation-with-Button1.css">
+    <link rel="stylesheet" href="~/assets/css/Pretty-Login-Form.css">
+    <link rel="stylesheet" href="~/assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+</head>
+
+<body>
+    <div class="row login-form">
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar navbar-default navigation-clean-button">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="background-image:url(&quot;assets/img/facebookprofile.png&quot;);">Econoterm </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Calculos <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">NOM-009-ENER </a></li>
+                            <li role="presentation"><a href="#">ASTM(Proximamente) </a></li>
+                            <li role="presentation"><a href="#">Mis Calculos</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a href="#">Contacto </a></li>
+                </ul>
+                <p class="navbar-text navbar-right actions"> <a class="btn btn-default action-button" role="button" asp-controller="Home" asp-action="Logout" style="background-color:rgb(149,187,51);">Salir </a></p>
+            </div>
+        </div>
+    </nav>
+    <div class="register-photo" style="padding-top:20px;">
+        <div class="form-container">
+            <form method="post" asp-action="Index" asp-controller="Calculadora">
+                <h2 class="text-center">Calculadora </h2>
+                <div class="form-group">
+                    <select class="form-control" asp-for="Forma" asp-items="Html.GetEnumSelectList<Econoterm.Models.FormayPosicion>()"></select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Diametro" asp-validation-for="Diametro" placeholder="Diametro (mm)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Ambiental" placeholder="Temperatura ambiental (°C)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Operacion" placeholder="Temperatura Operacion (°C)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Superficial" placeholder="Temperatura superficial (°C)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Viento" placeholder="Velocidad del viento km/hr">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" asp-for="Emisividad" placeholder="Emisividad">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" asp-for="Aislante" asp-items="Html.GetEnumSelectList<Econoterm.Models.ProductosList>()"></select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(149,187,51);">Calcular </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/MUSA_form-wizard.js"></script>
+</body>
+
+</html>

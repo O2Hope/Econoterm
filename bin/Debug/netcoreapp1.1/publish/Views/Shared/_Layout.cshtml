@@ -1,0 +1,62 @@
+@using Microsoft.AspNetCore.Identity
+@using Econoterm.Models.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Econoterm</title>
+    <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="~/assets/css/Navigation-with-Button1.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css">
+
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-default navigation-clean-button">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Econoterm </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+
+                        <li role="presentation"><a asp-controller="Calculadora" asp-action="Index">NOM-009-ENER </a></li>
+                        <li role="presentation"><a href="#">ASTM(Proximamente) </a></li>
+                        <li role="presentation"><a href="#">Mis Calculos</a></li>
+                    }
+                    <li role="presentation"><a href="#">Contacto </a></li>
+                </ul>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <p class="navbar-text navbar-right actions"> <a class="btn btn-default action-button" role="button" asp-action="Logout" asp-controller="Home" style="background-color:rgb(149,187,51);">Salir </a></p>
+
+                }
+                else
+                {
+                    <p class="navbar-text navbar-right actions"><a class="navbar-link login" asp-area="" asp-controller="Account" asp-action="Login">Iniciar Sesion </a>
+                        <a class="btn btn-default action-button" role="button" asp-controller="Account" asp-action="Register">Registrarse </a>
+                    </p>
+                }
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <div >
+        @RenderBody()
+    </div>
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model Econoterm.Models.Identity.RegisterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<link rel="stylesheet" href="~/css/Center.css" />
+<h1>Registrar una cuenta</h1>
+
+<div class="container">
+	<div class="Absolute-Center is-Responsive">
+		<div id="logo-container"></div>
+		<div class="col-sm-12 col-md-10 col-md-offset-1">
+			<form asp-controller="Account" asp-action="Register" method="post">
+				<div asp-validation-summary = "All" class="text-danger"></div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder = "Correo">
+					<span asp-validation-for="Email" class = "text-danger field-validation-error"></span>
+				</div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input asp-for="Password" class="form-control" placeholder="Password">
+					<span asp-validation-for="Password" class = "text-danger field-validation-error"></span>
+				</div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input asp-for="ConfirmPassword" class="form-control" placeholder="Repetir Password">
+					<span asp-validation-for="ConfirmPassword" class = "text-danger field-validation-error"></span>
+				</div>
+				<button type="submit" class="btn btn-def btn-block">Registrar</button>
+			</form>
+        </div>  
+    </div>    
+  </div>
+ 

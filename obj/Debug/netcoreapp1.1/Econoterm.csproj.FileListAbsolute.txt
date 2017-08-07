@@ -1,0 +1,10 @@
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/Econoterm.deps.json
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/Econoterm.runtimeconfig.json
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/Econoterm.runtimeconfig.dev.json
+/Users/MACBOOK/Projects/Econoterm/Econoterm/obj/Debug/netcoreapp1.1/Econoterm.csprojResolveAssemblyReference.cache
+/Users/MACBOOK/Projects/Econoterm/Econoterm/obj/Debug/netcoreapp1.1/Econoterm.AssemblyInfo.cs
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/Econoterm.dll
+/Users/MACBOOK/Projects/Econoterm/Econoterm/obj/Debug/netcoreapp1.1/Econoterm.dll
+/Users/MACBOOK/Projects/Econoterm/Econoterm/obj/Debug/netcoreapp1.1/Econoterm.pdb
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js
+/Users/MACBOOK/Projects/Econoterm/Econoterm/bin/Debug/netcoreapp1.1/obj/Debug/netcoreapp1.1/Econoterm.pdb
